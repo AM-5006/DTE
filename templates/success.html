@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Success
+{% endblock title%}
+
+{% block styles %}
+<style>
+    html, body {
+        overflow: hidden;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+</style>
+{% endblock styles %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center">Success</h1>
+    <h2 class="text-center">Message posted successfully</h2>
+    <p class="text-center">Page ID: {{response.page_id}}</p>
+    <p class="text-center">Post ID: {{response.post_id}}</p>
+    <a href="{{ '/' }}" id="back" class="btn btn-success d-block mx-auto" style="width: 150px;">Back</a>
+</div>
+<canvas id="confetti-canvas"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/confetti-js/dist/index.min.js"></script>
+<script>
+    const confettiSettings = {
+        target: 'confetti-canvas',
+        respawn: true,
+        rotate: true
+    };
+    const confetti = new ConfettiGenerator(confettiSettings);
+
+    confetti.render();
+</script>
+{% endblock body %}

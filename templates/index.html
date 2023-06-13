@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}
+    Home
+{% endblock title%}
+
+{% block body %}
+    <div class="container mt-5">
+        <form  method="POST" action="{{ 'facebook' }}">
+            <center><h1>Facebook</h1></center>
+            <div class="form-group">
+                <label for="access_token" style="font-weight: bold;">Access Token:</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="token" required>
+            </div>
+            <div class="form-group">
+                <label for="page_id" style="font-weight: bold;">Page ID:</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="page" required> 
+            </div>
+            <div class="form-group">
+                <label for="Message" style="font-weight: bold;">Message:</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
+            </div>            
+            <button type="submit" id="submit" class="btn btn-success">Post on Facebook</button>
+            <button type="reset" id="clear" class="btn btn-success">Clear</button>
+        </form>
+    </div>
+{% endblock body %}
