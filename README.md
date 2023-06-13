@@ -26,8 +26,8 @@ To run the Facebook Page Poster application, follow these steps:
 
 2. Automated Method:
 * Follow the steps of Manual Method.
-* Modify the token.json file with your access token, page ID, and message.
-* Run the automate.py script on seperate terminal using the following command: ```python automate.py```
+* Modify the `token.json` file with your access token, page ID, and message.
+* Run the `automate.py` script on seperate terminal using the following command: ```python automate.py```
 * The script will open a Firefox browser and automatically fill in the form with the data from ```token.json```.
 * If the access token and page ID are valid, the message will be posted on the specified Facebook page.
 * The script will navigate back to the index page after the form submission.
